@@ -26,7 +26,7 @@ public class Consumer {
         System.out.println("Response entity   " + responseEntity.getHeaders());
         System.out.println();
         String cookie  = String.valueOf(responseEntity.getHeaders().get("Set-Cookie"));
-        cookie = (String) cookie.subSequence(1, cookie.length() - 1);
+        cookie = cookie.substring(1, cookie.length() - 1);
         System.out.println("Cookie   " + cookie);
 
         headers.set("Cookie", cookie);
