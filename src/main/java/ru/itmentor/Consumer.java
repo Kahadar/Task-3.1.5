@@ -25,8 +25,8 @@ public class Consumer {
 
         System.out.println("Response entity:   " + responseEntity.getHeaders());
         System.out.println();
-        String cookie  = responseEntity.getHeaders().get("Set-Cookie").toString();
-        cookie = cookie.substring(1, cookie.length() - 1);
+        String cookie  = responseEntity.getHeaders().get("Set-Cookie").toString().replaceAll("^.|.$", "");
+//        cookie = cookie.substring(1, cookie.length() - 1);
         System.out.println("Cookie   " + cookie);
 
         headers.set("Cookie", cookie);
